@@ -10,11 +10,11 @@ Template.postSubmit.events({
     
    //post._id = Posts.insert(post);
     
-    Meteor.call('post', post, function(error, id){
+    Meteor.call('post', post, function(error, result){
       if (error)
         return alert(error.reason);
          
-      Router.go('postPage', {id:id}); 
+      Router.go('postPage', {_id : result}); 
   
     }); 
   }

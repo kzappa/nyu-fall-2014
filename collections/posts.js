@@ -1,11 +1,19 @@
 Posts = new Meteor.Collection('posts');
 
 Posts.allow({
-  insert: function(userId, doc){
-    return !! userId; 
-  },
-  update: function(userId, doc){
-    return !! userId;
+  update: function(userId, post){
+    return ownsDocument(userId, post);
+  }, 
+  remove: function(userId, post){
+    return ownsDocument(userId, post);    
+    
+  }
+});
+
+Posts.deny({
+  update: function(userId, post, fieldNames){
+    return (_.without(fieldNames, 'title', 'url', 'description').length > 0)
+               
   }
 });
 
@@ -33,9 +41,9 @@ Meteor.methods({
      
     //grab the right fields, and new fields such as username, time stamp
     var post = _.extend(_.pick(postAttributes, 'url', 'title', 'description'), {
-      userID: user._id,
-      author: user.username,
-      sumbitted: new Date().getTime()
+      userId: user._id,
+      author: user.profile.name,
+      submitted: new Date().getTime()
     });
     
     var postId = Posts.insert(post);

@@ -1,8 +1,6 @@
-Template.postsByAuthor.helpers ({
-
-  posts: function(){
+Template.postsByAuthor.helpers({  
+  posts: function() {
     return Posts.find({author:this.author});
   }
-  });
- 
+});
   
