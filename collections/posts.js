@@ -38,9 +38,11 @@ Meteor.methods({
     if(postAttributes.url && duplicatePost){
       throw new Meteor.Error(302, "This link has already been posted!", duplicatePost._id);
       }
+    if(!postAttributes.imageId)
+      throw new Meteor.Error(422, "You need an image!");
      
     //grab the right fields, and new fields such as username, time stamp
-    var post = _.extend(_.pick(postAttributes, 'url', 'title', 'description'), {
+    var post = _.extend(_.pick(postAttributes, 'url', 'title', 'description', 'imageId'), {
       userId: user._id,
       author: user.profile.name,
       submitted: new Date().getTime()

@@ -1,18 +1,26 @@
 <template name="postSubmit">
-  <h1>New Post</h1>
-
-  <form role="form">
-    <div class="form-group">
-      <input type="text" class="form-control" name="post-title" placeholder="Title">
-    </div>
-    <div class="form-group">
-      <input type="url" class="form-control" name="post-url" placeholder="URL">
-    </div>
-    <div class="form-group">
-      <textarea class="form-control" name="post-description" rows="6" placeholder="Description"></textarea>
-    </div>
-    <button type="submit" class="btn btn-primary">Submit</button>
-  </form>
+  <h2>New Post</h2>
   
+  
+  <div class="col-md-4 col-sm-6">   	 
+    <div class="well"> 
+        <form role="form">
+          <div class="form-group">
+            <label for="post-image">Image:</label>
+            <input type="file" name="post-image" />
+          </div>
+          <div class="form-group">
+            <input type="text" class="form-control" name="post-title" placeholder="Title">
+          </div>
+          <div class="form-group">
+            <input type="url" class="form-control" name="post-url" placeholder="URL">
+          </div>
+          <div class="form-group">
+            <textarea name="post-description" class="form-control" rows="6" placeholder="Description"></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+  </div>
 </template>
 

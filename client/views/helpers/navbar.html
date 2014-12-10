@@ -17,7 +17,9 @@
             <li class="{{activeIfTemplateIs 'postsList'}}"><a href="{{pathFor 'postsList'}}">Home</a></li>
             <li class="{{activeIfTemplateIs 'aboutPage'}}"><a href="{{pathFor 'aboutPage'}}">About</a></li>
             {{#if currentUser}}
-            <li class="{{activeIfTemplateIs 'postSubmit'}}"><a href="{{pathFor 'postSubmit'}}">New Post</a></li>{{/if}}
+            <li class="{{activeIfTemplateIs 'postSubmit'}}"><a href="{{pathFor 'postSubmit'}}">New Post</a></li>
+            <li class="{{activeIfTemplateIs 'profile'}}"><a href="{{pathFor 'me'}}">My Profile</a></li>
+            {{/if}}
           </ul>
           <ul class="nav navbar-nav navbar-right">
             {{> loginButtons }} 

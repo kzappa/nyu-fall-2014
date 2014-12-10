@@ -4,4 +4,6 @@ Template.navbar.helpers({
   return currentRoute && template === currentRoute.lookupTemplate() ? 'active' : '';
   }
   
+  
+  
 });

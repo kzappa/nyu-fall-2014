@@ -11,3 +11,9 @@ iron:router
 accounts-password
 ian:accounts-ui-bootstrap-3
 accounts-facebook
+cfs:standard-packages
+cfs:s3
+bengott:avatar
+standard-app-packages
+cfs:gridfs
+
