@@ -1,20 +1,30 @@
 <template name="me">
-  
-  <h1>My Profile</h1>
-  {{#if _id}}
-    Name: {{name}}<br />
-    School: {{school}}<br />
-  {{else}}
-    <form role="form">
-      <div class="form-group">
-        <input type="text" class="form-control" name="profile-name" placeholder="Enter your name">
-      </div>
-      <div class="form-group">
-        <input type="text" class="form-control" name="profile-school" placeholder="Where do you teach?">
-      </div>
 
-      <button type="submit" class="btn btn-primary">Submit</button>
-    </form>
-  {{/if}}
-  
+  <div class="row">  
+    <h1>My Profile</h1>
+    {{#if _id}}
+      Name: {{name}}<br />
+      School: {{school}}<br />
+      About: {{intro}}<br />
+    {{else}}
+      <form role="form">
+          <div class="form-group">
+            <label for="post-image">Image:</label>
+            <input type="file" name="post-image" />
+          </div>
+        <div class="form-group">
+          <input type="text" class="form-control" name="profile-name" placeholder="Enter your name">
+        </div>
+        <div class="form-group">
+          <input type="text" class="form-control" name="profile-school" placeholder="Where do you teach?">
+        </div>
+        <div class="form-group">
+          <input type="text" class="form-control" name="profile-intro" placeholder="Tell a little about yourself.">
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+    {{/if}}
+  </div>
+
 </template>
+

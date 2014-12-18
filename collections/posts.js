@@ -12,7 +12,7 @@ Posts.allow({
 
 Posts.deny({
   update: function(userId, post, fieldNames){
-    return (_.without(fieldNames, 'title', 'url', 'description').length > 0)
+    return (_.without(fieldNames, 'title', 'url', 'description', 'imageId').length > 0)
                
   }
 });
@@ -40,17 +40,24 @@ Meteor.methods({
       }
     if(!postAttributes.imageId)
       throw new Meteor.Error(422, "You need an image!");
-     
+    
+    
+    
     //grab the right fields, and new fields such as username, time stamp
     var post = _.extend(_.pick(postAttributes, 'url', 'title', 'description', 'imageId'), {
       userId: user._id,
       author: user.profile.name,
-      submitted: new Date().getTime()
+      submitted: new Date(),
+      commentsCount: 0
     });
+    
+    
+    
     
     var postId = Posts.insert(post);
     
     return postId;
     
   }
+  
 });

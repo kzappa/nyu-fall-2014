@@ -1,4 +1,23 @@
 <template name="postPage">
- <div class="row"> {{> postItem }}
+
+ <div class="container"> 
+   
+   {{> postItem }}
+ 
+  {{#if currentUser}}
+    {{> commentSubmit}}
+  {{else}}
+    <p>Please log in to leave a comment.</p>
+  {{/if}}
+   
+ {{#if comments}}
+  
+   <ul>
+    {{#each comments}}
+      {{> commentItem}}
+    {{/each}}
+  </ul>
+  {{/if}}
+
   </div>
 </template>

@@ -16,4 +16,10 @@ cfs:s3
 bengott:avatar
 standard-app-packages
 cfs:gridfs
+sacha:spin
+
+
+npm-container
+http
+arunoda:npm
 

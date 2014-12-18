@@ -1,0 +1,20 @@
+<template name="landingPage">
+    <div class="container">
+      {{#if currentUser}}
+      
+  
+
+         {{>postsList }}
+
+      {{else}}
+    
+ 
+          <div class="jumbotron">
+            <h1>Welcome to FORUM!</h1>
+            <p>Connect with the teaching community!</p>
+            <p><a href="{{pathFor 'aboutPage'}}" class="btn btn-primary btn-lg" role="button">Learn more</a></p>
+          </div>
+
+      {{/if}}
+     </div>
+</template>

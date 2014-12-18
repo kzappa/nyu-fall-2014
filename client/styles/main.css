@@ -1,19 +1,128 @@
 body{
   padding-top:80px;
+  background-color:#e0e0e0;
+}
+
+.about {
+  background: #fff;
+  
+}
+#container1 {
+  background: #fff;
 }
 
 .post-author {
   position:relative;
-  top:-20px;
+  top:-200px;
   right:5px;
+  padding:20px;
+
 }
-/*
+
 .post-edit {
   position:relative;
-  top:-195px;
-  right:-45px;
+  top:-300px;
+  right:0px;
 }
-*/
+
+#profile-image {
+  margin-top:30px;
+  margin-left:130px;
+  
+  
+}
+
+#post-box {
+  background-color: #ffffff !important;
+  padding: 10px !important;
+  margin-bottom: 20px !important;
+  border-color: #d2d2d2 !important;
+  box-shadow: 0 1px 0 #cfcfcf !important;
+  
+  
+}
+
+#profile-page {
+  margin-left:0px !important;
+}
+
+
+/*
 .col-lg-3:nth-child(4n+1){
     clear: left;
+}
+*/
+
+.caption {
+   padding-left:-20px;
+
+}
+
+
+#profile-sidebar {
+  background-color: #3775da;
+  padding: 20px;
+  margin-top:-30px;
+  margin-left:-20px;
+  padding-bottom: 310px;
+  text-align: center;
+  color: #ffffff;
+  
+
+}
+
+#profile-cont {
+  margin-left:20px;
+  
+  
+}
+
+#avatar-profile {
+
+    
+  
+}
+
+#edit-button {
+  margin-top: 20px;
+  padding-left:10px;
+  background-color: #f0ad4e;
+  border-color: #eea236;
+}
+  
+  
+#groupsP {
+  background-color: #FFFFFF;
+  height: 500px;
+  
+}
+
+#groupsTemp {
+  padding-top:30px;
+  margin-left:auto;
+  margin-right: auto;
+  margin-bottom: 20px;
+  
+}
+
+#comments {
+    background-color: #FFFFFF;
+    padding: 20px;
+    margin-top: 20px;
+    border-color: #d2d2d2 !important;
+    box-shadow: 0 1px 0 #cfcfcf !important;
+  
+  
+}
+
+#editPost { background: #ffffff;
+    padding: 20px;
+     border-color: #d2d2d2 !important;
+    box-shadow: 0 1px 0 #cfcfcf !important;
+  
+  
+}
+
+ul {
+    list-style: none;
 }

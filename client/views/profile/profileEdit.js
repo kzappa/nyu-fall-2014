@@ -1,21 +1,21 @@
-Template.postEdit.helpers({
+Template.profileEdit.helpers({
   myImage: function(){
     return Images.findOne({_id: this.imageId});
   }
 });
 
-Template.postEdit.helpers({
+Template.profileEdit.helpers({
   myImage: function(){
     return Images.findOne({_id: this.imageId});
   }
 });
 
-Template.postEdit.events({
+Template.profileEdit.events({
   'submit form': function(e) {
     e.preventDefault();
     
-    var currentPostId = this._id;
-    
+    var currentProfileId = this._id;
+    /*
     var myImage = $(e.target).find('[name=post-image]').get(0).files[0];
 
     var uploadedImage = Images.insert(myImage, function (error, fileObj) {
@@ -30,22 +30,22 @@ Template.postEdit.events({
         });
       }
     });
+    */
     
     
     
-    
-    var postProperties = {
-      title: $(e.target).find('[name=post-title]').val(),
-      url: $(e.target).find('[name=post-url]').val(),
-      description: $(e.target).find('[name=post-description]').val()
+    var profileProperties = {
+      name: $(e.target).find('[name=profile-name]').val(),
+      school: $(e.target).find('[name=profile-school]').val(),
+      intro: $(e.target).find('[name=profile-intro]').val()
     }
     
-    Posts.update(currentPostId, {$set: postProperties}, function(error){
-      if (error) {
+    Profiles.update(currentProfileId, {$set: profileProperties}, function(error){
+      if (error)
         alert(error.reason);
-      } else {
-        Router.go('postPage', {_id: currentPostId});
-      }
+      
+      Router.go('profile', {userId: Meteor.userId()});
+
     });
   },
   
@@ -55,7 +55,7 @@ Template.postEdit.events({
     if (confirm("Delete this post?")){
       var currentPostId = this._id;
       Posts.remove(currentPostId);
-      Router.go('postsList');
+      Router.go('me');
     }
   },
   

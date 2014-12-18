@@ -1,10 +1,51 @@
 <template name="profile">
-  <h1>Profile</h1>  
-  Name: {{name}}<br />
-  School: {{school}}<br />
-  
-  
-    {{! with acts as an if : the following part won't be displayed
-        if the user document has no profile property}}
 
+  <div id="profile-page" class="container">
+
+      <div id="profile-sidebar" class="col-xs-6 col-md-4 pull-left row">
+         <div id="profile-cont">
+           <div id="profile-image">
+          {{> avatar userId=this.userId shape="circle" bgColor="#39DBAC"}}
+           </div>
+           <h1>{{name}}</h1>  
+            School: {{school}}<br />
+            About: {{intro}}
+
+                {{#if ownProfile}}
+                  <a href="{{pathFor 'profileEdit'}}" id="edit-button" class="btn btn-default btn-block">Edit</a>
+                {{/if}}
+          </div>
+      </div>
+
+    
+          <div class="col-xs-12 col-md-8 pull-right" id="profile-tabs" role="tabpanel">
+              <ul class="nav nav-tabs" role="tablist">
+                <li role="presentation" class="active"><a href="#postsP" aria-controls="home" role="tab" data-toggle="tab">Posts</a></li>
+                <li role="presentation"><a href="#groupsP" aria-controls="profile" role="tab" data-toggle="tab">Groups</a></li>
+            </ul>
+            
+             <div class="tab-content">
+                <div role="tabpanel" class="tab-pane active" id="postsP">
+               
+         {{> postSubmit}}
+
+            
+          {{#each posts}}
+
+          {{> postItem}}
+
+          {{/each}}
+               
+               </div>
+                <div role="tabpanel" class="tab-pane" id="groupsP"> {{> groups}}</div>
+            </div>
+
+
+           </div>
+    
+    
+    
+          {{! with acts as an if : the following part won't be displayed
+              if the user document has no profile property}}
+  </div> 
 </template>

@@ -24,6 +24,13 @@ Template.postSubmit.events({
     
     //post._id = Posts.insert(post);
     
+    Meteor.call('getAndParseUrl', post.url, function(error, result){
+      if (error)
+        alert(error.reason);
+      
+      console.log(result);
+    });
+    
     Meteor.call('post', post, function(error, id){
       if (error)
         return alert(error.reason);

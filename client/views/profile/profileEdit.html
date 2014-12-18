@@ -1,0 +1,36 @@
+<template name="profileEdit">
+  <h1>Edit Profile</h1>
+
+  <form role="form">
+    {{#if myImage.isUploaded}}
+    <div class="col-lg-3 col-sm-6 col-xs-12">
+      <div class="thumbnail">
+      <img src="{{myImage.url store='images'}}" class="img-responsive" />
+      <div class="caption">
+            <a href="#" class="btn btn-danger delete-image">Delete Image</a>
+        </div>
+      </div>
+    </div>
+    {{else}}
+   <div class="form-group">
+     <label for="post-image">Image:</label>
+     <input type="file" name="post-image" />
+   </div>
+    {{/if}}
+
+    <div class="form-group">
+      <input type="text" class="form-control" name="profile-name" placeholder="name" value="{{name}}">
+    </div>
+    <div class="form-group">
+      <input type="text" class="form-control" name="profile-school" placeholder="school" value="{{school}}">
+    </div>
+    <div class="form-group">
+      <textarea class="form-control" name="profile-intro" rows="6" placeholder="intro" value="{{intro}}"></textarea>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+    <hr />
+    <a href="#" class="btn btn-danger delete">Delete Post</a>
+  </form>
+  
+</template>
+

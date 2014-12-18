@@ -1,10 +1,13 @@
 Template.profile.helpers({
-  /*
-  name: function(){
-    return this.profile.name;
+  ownProfile: function() {
+    return this.userId === Meteor.userId();
+  },
+  posts: function() {
+    return Posts.find({userId:this.userId});
   }
-  */
 });
+
+
 
 /*
 ProfileController=RouteController.extend({
